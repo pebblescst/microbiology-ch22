@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 22: Emerging, Recurring, and Reappearing Diseases - Study Guide</title>
+<style>
+:root {
+  --navy: #2C3539;
+  --navy2: #5C6B72;
+  --crimson: #2F6F6F;
+  --crimson-dark: #1F4D4D;
+  --gold: #D99A3D;
+  --gold-dark: #B87E28;
+  --cream: #F2EFE9;
+  --bg: #F7F6F2;
+  --card: #FFFFFF;
+  --text: #1E2A30;
+  --text-light: #5E6E76;
+  --border: #E1DCD0;
+  --success-bg: #E7EFE9;
+  --success-text: #3D5A40;
+  --error-bg: #FAEBE5;
+  --error-text: #8C3B22;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --navy: #3A4449;
+    --navy2: #8C9AA1;
+    --crimson: #4FA0A0;
+    --crimson-dark: #2F6F6F;
+    --gold: #E8B86A;
+    --gold-dark: #D99A3D;
+    --cream: #2A2A24;
+    --bg: #16191B;
+    --card: #21262A;
+    --text: #F0ECE4;
+    --text-light: #C2C8CC;
+    --border: #3A4146;
+    --success-bg: #20302A;
+    --success-text: #A9D4B8;
+    --error-bg: #36241D;
+    --error-text: #F0B8A0;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--navy);
+  color: #fff;
+  padding: 22px 28px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 6px;
+  font-size: 1.7rem;
+  letter-spacing: 0.5px;
+}
+
+header p {
+  margin: 0;
+  color: var(--cream);
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 10px;
+  background: var(--gold);
+  color: #1E2A30;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 5px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+.tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--cream);
+  border-bottom: 2px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.tab-bar button {
+  flex: 1 1 auto;
+  background: transparent;
+  color: var(--text);
+  border: none;
+  padding: 12px 8px;
+  font-family: Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.tab-bar button:hover {
+  background: rgba(217,154,61,0.18);
+}
+
+.tab-bar button.active {
+  background: var(--gold);
+  color: #fff;
+  border-bottom: 3px solid var(--gold-dark);
+}
+
+.tab-content {
+  display: none;
+  padding: 24px 28px 44px;
+  max-width: 980px;
+  margin: 0 auto;
+  animation: fadeIn 0.25s ease-in;
+}
+
+.tab-content.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  color: var(--navy);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 8px;
+  font-size: 1.45rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  h2 { color: var(--navy2); }
+}
+
+h3 {
+  color: var(--crimson-dark);
+  font-size: 1.12rem;
+  margin-top: 24px;
+}
+
+@media (prefers-color-scheme: dark) {
+  h3 { color: var(--gold); }
+}
+
+.section-intro {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-family: Arial, sans-serif;
+}
+
+.stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.stat-card {
+  flex: 1 1 150px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.stat-card .num {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: var(--navy);
+  font-family: Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  .stat-card .num { color: var(--navy2); }
+}
+
+.stat-card .lbl {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  font-family: Arial, sans-serif;
+  margin-top: 4px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 14px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.card h4 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 1.05rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .card h4 { color: var(--navy2); }
+}
+
+.alert {
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 16px 0;
+  font-family: Arial, sans-serif;
+  font-size: 0.92rem;
+}
+
+.alert.clinical {
+  background: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid var(--navy2);
+}
+
+.alert.warning {
+  background: var(--error-bg);
+  color: var(--error-text);
+  border: 1px solid var(--crimson);
+}
+
+.alert strong:first-child { display: block; margin-bottom: 4px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+  font-family: Arial, sans-serif;
+  font-size: 0.88rem;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 9px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: var(--navy);
+  color: var(--cream);
+}
+
+tr:nth-child(even) td {
+  background: rgba(217,154,61,0.07);
+}
+
+.accordion {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.accordion-header {
+  background: var(--card);
+  padding: 12px 18px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  color: var(--navy);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .accordion-header { color: var(--navy2); }
+}
+
+.accordion-header:after {
+  content: "+";
+  font-size: 1.2rem;
+  color: var(--crimson);
+}
+
+.accordion-header.open:after { content: "\2212"; }
+
+.accordion-body {
+  display: none;
+  padding: 4px 18px 16px;
+  font-family: Arial, sans-serif;
+  font-size: 0.92rem;
+}
+
+.accordion-body.open { display: block; }
+
+ul.detail-list { margin: 8px 0; padding-left: 22px; font-family: Arial, sans-serif; font-size: 0.92rem; }
+ul.detail-list li { margin-bottom: 6px; }
+
+/* ===== Flashcards ===== */
+.flash-controls {
+  font-family: Arial, sans-serif;
+  margin-bottom: 14px;
+}
+
+.flash-controls select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.flash-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.flashcard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  min-height: 110px;
+  padding: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: background 0.15s;
+}
+
+.flashcard:hover { background: rgba(217,154,61,0.10); }
+
+.flashcard .term {
+  font-weight: bold;
+  font-size: 1.0rem;
+  color: var(--navy);
+}
+
+@media (prefers-color-scheme: dark) {
+  .flashcard .term { color: var(--navy2); }
+}
+
+.flashcard .def {
+  display: none;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.flashcard.flipped .term { display: none; }
+.flashcard.flipped .def { display: block; }
+.flashcard.flipped { background: rgba(47,111,111,0.08); }
+
+/* ===== Quiz ===== */
+.quiz-q {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 14px 0;
+  font-family: Arial, sans-serif;
+}
+
+.quiz-q p.question { font-weight: bold; margin-top: 0; font-size: 0.97rem; }
+
+.quiz-q label {
+  display: block;
+  padding: 8px 10px;
+  margin: 6px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.92rem;
+  border: 1px solid transparent;
+}
+
+.quiz-q label:hover { background: rgba(217,154,61,0.10); }
+
+.quiz-feedback {
+  display: none;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+}
+
+.quiz-feedback.show { display: block; }
+.quiz-feedback.ok { background: var(--success-bg); color: var(--success-text); }
+.quiz-feedback.no { background: var(--error-bg); color: var(--error-text); }
+
+#quiz-score {
+  text-align: center;
+  padding: 16px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: var(--navy);
+  display: none;
+  font-family: Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  #quiz-score { color: var(--navy2); }
+}
+
+#submit-quiz {
+  display: block;
+  margin: 18px auto 0;
+  background: var(--crimson-dark);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 11px 36px;
+  font-size: 0.95rem;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
+
+#submit-quiz:hover { background: var(--crimson); }
+
+.objectives-list { font-family: Arial, sans-serif; font-size: 0.95rem; }
+.objectives-list li { margin-bottom: 8px; }
+
+footer {
+  text-align: center;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  border-top: 1px solid var(--border);
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Microbiology for Surgical Technologists &mdash; 3rd Edition</h1>
+  <p>Rodriguez &bull; Chapter 22: Emerging, Recurring, and Reappearing Diseases</p>
+  <span class="badge">CST Board Prep &nbsp;&bull;&nbsp; ATA College</span>
+</header>
+<div class="tab-bar">
+  <button class="active" onclick="showTab('overview',this)">Overview</button>
+  <button onclick="showTab('emerging1',this)">Emerging: Hemorrhagic Fevers</button>
+  <button onclick="showTab('emerging2',this)">Emerging: Vector-Borne &amp; Other</button>
+  <button onclick="showTab('recurringhai',this)">Recurring: HAIs &amp; Resistance</button>
+  <button onclick="showTab('recurringother',this)">Recurring: GI, Food &amp; HIV</button>
+  <button onclick="showTab('reappearing',this)">Reappearing Diseases</button>
+  <button onclick="showTab('terms',this)">Key Terms</button>
+  <button onclick="showTab('quiz',this)">Quiz</button>
+</div>
+
+
+<div id="overview" class="tab-content active">
+  <h2>Chapter Overview &amp; Clinical Significance</h2>
+  <p class="section-intro">Chapter 22 is the final chapter of this textbook, and it brings together everything learned about microbiology and infection control to examine three categories of disease that surgical technologists will encounter throughout their careers: diseases that are <strong>emerging</strong> (new to a population or region), diseases that are <strong>recurring</strong> (ongoing, often preventable, problems such as healthcare-associated infections), and diseases that are <strong>reappearing</strong> (previously controlled or eradicated diseases returning due to gaps in vaccination and public health trust).</p>
+
+  <div class="alert warning">
+    <strong>CST Clinical Significance: The Dallas Ebola Case</strong>
+    An emergency room nurse from Dallas was the first person to contract Ebola in the United States, becoming ill after caring for a patient who had traveled to and returned from West Africa in September 2014. A second nurse caring for the same patient also contracted Ebola. Both were treated and survived. In 2015, the first nurse sued Texas Health Presbyterian Hospital for failing to develop policies to adequately train personnel in how to treat patients with highly contagious infections. One of the most important lessons from this case is the critical need for training and practice in correct use of personal protective equipment (PPE) to prevent transmission of pathogenic disease.
+  </div>
+
+  <div class="alert clinical">
+    <strong>Presume Every Patient Is Potentially Infectious</strong>
+    In the OR, surgical team members may have no knowledge of a patient&rsquo;s health status, so they must presume every patient to be potentially infected with every possible type of disease. With that mindset, every member of the surgical team is responsible for knowing how to use the PPE provided &mdash; and choosing to use it correctly every single time they participate in a surgical procedure.
+  </div>
+
+  <h3>Microbes in the Media: Why This Chapter Matters</h3>
+  <p>Whether the Ebola outbreak of 2014 or the COVID-19 pandemic, weaknesses in local, national, or global healthcare systems gain wide media attention, often focusing on lessons that should have been learned from previous experiences. The COVID-19 pandemic placed incredible stress on healthcare providers, who had to find unique solutions to supply-chain shortages of critical PPE and acute care equipment while caring for massive numbers of critically ill and dying patients &mdash; numbers not seen since the 1918 influenza pandemic.</p>
+
+  <div class="card">
+    <h4>Three Categories of Media-Covered Disease Stories</h4>
+    <p>News stories about infectious disease generally fall into three broad categories, which structure the rest of this chapter:</p>
+    <ul class="detail-list">
+      <li><strong>Emerging diseases</strong> &mdash; newer diseases previously seen primarily in foreign countries that, with the vast expansion of travel, tourism, and trade, have gained entry to the United States; also includes increasing numbers of mutated, potentially antibiotic-resistant strains of bacteria linked to the broad scope of the U.S. healthcare system.</li>
+      <li><strong>Recurring diseases</strong> &mdash; ongoing, sporadic outbreaks (often food contamination), and diseases linked to a wide range of human behavior factors, including preventable sexually transmitted infections and other lifestyle choices that predispose individuals to transmissible disease.</li>
+      <li><strong>Reappearing diseases</strong> &mdash; diseases previously eradicated or controlled by effective national vaccination campaigns, public health initiatives, and herd immunity, now reappearing due to widespread misinformation campaigns that erode trust in the public health institutions responsible for providing valid scientific guidance and response protocols.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h4>A Constantly Shifting Landscape</h4>
+    <p>Ebola is only one of several hemorrhagic fever viruses that have continued to cause outbreaks in other parts of the world since 2014. New viruses have caused concerning infections in children, including the deadly delta and highly transmissible omicron variants of SARS-CoV-2, the virus that causes COVID-19. Other common viruses, such as measles &mdash; previously under control through routine vaccination programs &mdash; have reappeared due to parents failing to follow public health vaccine schedule recommendations.</p>
+  </div>
+
+  <h3>Chapter Objectives</h3>
+  <p class="section-intro">By the end of this chapter, you should be able to:</p>
+  <ul class="objectives-list">
+    <li>Define key terms.</li>
+    <li>Compare and contrast emerging, recurring, and reappearing diseases.</li>
+    <li>Identify the pathogens associated with these classifications of infection.</li>
+    <li>Identify the causative factors associated with development of antibiotic-resistant microbes.</li>
+    <li>Discuss the challenges in reducing the transmission of preventable diseases in healthcare settings and public communities.</li>
+    <li>Apply critical thinking skills in relating chapter material to the surgical environment of care or broader global community.</li>
+  </ul>
+</div>
+
+
+<div id="emerging1" class="tab-content">
+  <h2>Emerging Viral Diseases: Viral Evolution &amp; Hemorrhagic Fevers</h2>
+  <p class="section-intro">Viruses are naturally equipped to mutate and evolve to adapt to environmental changes, and their relationships with infected host cells cause subtle, cumulative changes in those cells over time. Transmission of mutated viruses from animals allows new viruses to infect and affect humans in all regions of the planet. Humans are more mobile than ever before, allowing viruses to quickly move about and infect globally, where many infections were previously localized.</p>
+
+  <div class="card">
+    <h4>The Transmissibility &mdash; Virulence Trade-Off</h4>
+    <p>Viruses develop an evolutionary balance between transmissibility (how easily they spread) and virulence (how severe the disease they cause is) &mdash; an advantage held by strains that are more readily transmitted over prolonged periods. A virus that kills its host too quickly may have less opportunity to spread, while a less severe but highly transmissible strain can persist and circulate more widely.</p>
+  </div>
+
+  <h3>Viral Hemorrhagic Fevers: An Overview</h3>
+  <p>Dengue, Ebola, Marburg, and Lassa fevers are the most common hemorrhagic diseases caused by viruses. <strong>Hemorrhagic fever</strong> is a key term for this section &mdash; a group of illnesses caused by several distinct families of viruses that produce fever along with bleeding (hemorrhage) disorders.</p>
+
+  <div class="card">
+    <h4>Ebola Hemorrhagic Fever (EHF): Pathophysiology</h4>
+    <p>Ebola hemorrhagic fever is a fatal viral disease that affects humans and primates, caused by a member of the filovirus (<em>Filoviridae</em>) family of RNA viruses, characterized by long filaments that emerge from the central body. Replication within host cells occurs quickly, destroying them and releasing large numbers of infectious virions that spread rapidly through the blood, taking hold in multiple organs and causing severe and rapid necrosis. As structures deteriorate, uncontrolled bleeding occurs, mostly in the mucosa, abdomen, and pericardium. Intravascular volume depletion results in intractable (difficult to manage) systemic shock, respiratory failure, and death. Ebola is a zoonotic virus &mdash; it has been isolated in species of fruit bats in endemic areas.</p>
+  </div>
+
+  <div class="card">
+    <h4>Ebola Hemorrhagic Fever: Transmission &amp; PPE</h4>
+    <p>Transmission of filoviruses involves close personal contact between an infected individual&rsquo;s body fluids and another susceptible individual. As the disease progresses rapidly, infected individuals become debilitated and unable to care for themselves. Caretakers of infected individuals have a high risk of becoming infected if strict contact precautions and adequate PPE are not used. Medical aid workers and doctors providing humanitarian care can also contract Ebola along with the patients they treat &mdash; the exact scenario described in the chapter&rsquo;s opening Dallas case study.</p>
+  </div>
+
+  <div class="card">
+    <h4>Marburg Hemorrhagic Fever</h4>
+    <p>Another member of the <em>Filoviridae</em> family of hemorrhagic fever viruses, first recognized in 1967. The African fruit bat, <em>Rousettus aegyptiacus</em>, is the natural reservoir for the Marburg virus and shows no obvious signs of illness before infecting primates and humans, with resulting high mortality rates.</p>
+  </div>
+
+  <div class="card">
+    <h4>Dengue Fever &amp; Dengue Hemorrhagic Fever (DHF)</h4>
+    <p>The dengue virus is part of genus <em>Flavivirus</em>, family <em>Flaviviridae</em>, and is transmitted by <em>Aedes aegypti</em> mosquitoes. Viremia in humans persists for 2 to 12 days. Symptoms of &ldquo;break-bone fever&rdquo; are manifested by severe myalgia, arthralgia, high fever, headache, and rash on the extremities. Leukopenia and thrombocytopenia are also common. There are four serotypes &mdash; Dengue 1, 2, 3, and 4 &mdash; and infection with one serotype does not protect against the others. Dengue hemorrhagic fever (DHF) and dengue shock syndrome (DSS) are severe forms, and death occurs in 50% of all DHF cases.</p>
+    <div class="stat-row">
+      <div class="stat-card"><div class="num">~400M</div><div class="lbl">persons affected annually</div></div>
+      <div class="stat-card"><div class="num">~100M</div><div class="lbl">become ill annually</div></div>
+      <div class="stat-card"><div class="num">~40,000</div><div class="lbl">die annually</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4>Lassa Fever</h4>
+    <p>The Lassa virus belongs to the <em>Arenaviridae</em> family of viruses, named for the sand-like appearance of their surface and lipid membrane. In human disease, members of this family are usually associated with <em>Mastomys natalensis</em> rodent vectors, and each virus is associated with a particular rodent host species. Signs and symptoms of Lassa infection include fever and fatigue, with gastrointestinal (abdominal pain, nausea, vomiting, diarrhea), respiratory (pharyngitis, coughing), cardiovascular (pericarditis, hypertension), and neurologic (encephalitis, meningitis, confusion, seizures) systems affected.</p>
+  </div>
+</div>
+
+
+<div id="emerging2" class="tab-content">
+  <h2>Emerging Viral Diseases: Vector-Borne &amp; Other Emerging Infections</h2>
+  <p class="section-intro">Beyond the classic hemorrhagic fever viruses, several other viral diseases have emerged or re-emerged in recent decades &mdash; some carried by rodents, some by mosquitoes, and some spreading through respiratory transmission. This tab continues the survey of Emerging Viral Diseases.</p>
+
+  <h3>Hantavirus</h3>
+  <div class="card">
+    <h4>Family, Types &amp; Diseases</h4>
+    <p>Hantavirus is <strong>not</strong> a hemorrhagic fever virus &mdash; it belongs to family <em>Bunyaviridae</em>, a group of RNA viruses with three segments of negative-sense single-strand RNA. There are dozens of types, but only two members of the family cause serious disease: Hantavirus pulmonary syndrome (HPS) and hemorrhagic fever with renal syndrome (HFRS). The HPS-causing strain is endemic to North and South America, and the most prevalent strain of the HPS-causing virus is Sin Nombre virus (SNV) &mdash; also known as the Four Corners virus for the geographic U.S. area where it was first identified. HFRS signs include fever and myalgia followed by petechiae; gastrointestinal hemorrhage, pulmonary edema, and acute renal failure ensue, and death is due to shock and loss of blood volume.</p>
+  </div>
+
+  <div class="card">
+    <h4>The Four Corners Outbreak</h4>
+    <p>Members of the Navajo Nation in New Mexico died in 1993 from a mysterious respiratory ailment first called &ldquo;unexplained adult respiratory distress syndrome&rdquo; (UARDS), later found to be a new strain of Hantavirus; most victims were young and healthy. Rodent trappings at the rural victims&rsquo; homes showed the HPS-causing virus is carried by deer mice (<em>Peromyscus maniculatus</em>); humans are exposed where rodent infestation is high, and transmission occurs in aerosols of virus-infected rodent urine or feces. Hantavirus pulmonary syndrome (HPS) produces flu-like symptoms (fever, myalgia, and chills) as first clinical signs, but eventually the lungs fill with fluid from the circulatory system, causing respiratory distress resulting in death in two-thirds of all cases. Onset of the respiratory distress is much quicker than in other respiratory diseases.</p>
+  </div>
+
+  <h3>Mosquito-Borne Viruses</h3>
+  <div class="card">
+    <h4>Chikungunya Virus</h4>
+    <p>Found in the Americas on islands in the Caribbean &mdash; including the territories of Puerto Rico and the U.S. Virgin Islands &mdash; and now considered a nationally notifiable disease by the CDC. Asia and the Americas have been the regions most affected by chikungunya, with Brazil accounting for greater than 90% of cases. Symptoms are similar to dengue fever, and the virus is transmitted by <em>Aedes aegypti</em> and <em>Aedes albopictus</em> mosquitoes.</p>
+  </div>
+
+  <div class="card">
+    <h4>Zika Virus</h4>
+    <p>A zoonotic mosquito-borne flavivirus transmitted by <em>Aedes</em> species mosquitoes, first isolated in monkeys. Zika is associated with microcephaly of infants born to mothers infected during pregnancy. An increased risk of neurologic complications is also linked to Zika infection in adults and children, including neuropathy, myelitis, and Guillain-Barr&eacute; syndrome.</p>
+  </div>
+
+  <h3>Other Emerging Viral Infections</h3>
+  <div class="card">
+    <h4>Sporadic Outbreaks of the Past Decade</h4>
+    <ul class="detail-list">
+      <li><strong>MERS</strong> (Middle East respiratory syndrome) &mdash; a respiratory coronavirus.</li>
+      <li><strong>Enterovirus EV-D68</strong> &mdash; a severe respiratory virus that affects mainly children with pre-existing asthma.</li>
+      <li><strong>Acute flaccid myelitis (AFM)</strong> &mdash; a respiratory illness in children that causes sudden onset of weakness in one or more arms or legs; a possible (but not confirmed) link exists between EV-D68 cases and AFM cases.</li>
+      <li><strong>COVID-19 variants</strong> &mdash; the delta and omicron variants of SARS-CoV-2 have proved to be deadly and extremely transmissible, with ongoing research into other mutations as well.</li>
+    </ul>
+  </div>
+
+  <div class="alert clinical">
+    <strong>Pattern Recognition</strong>
+    Across this tab and the previous one, notice the recurring themes: a zoonotic origin (animal reservoir &mdash; bats, rodents, monkeys), a specific arthropod or contact-based transmission route, and a geographic association that is shifting as travel, trade, and climate change expand the range of vectors and hosts. These themes connect directly to the &ldquo;viral evolution&rdquo; discussion that opened this section.
+  </div>
+</div>
+
+
+<div id="recurringhai" class="tab-content">
+  <h2>Recurring Diseases: Healthcare-Associated Infections &amp; Antibiotic Resistance</h2>
+  <p class="section-intro">More relevant to surgical technology students than food-borne infections, viral GI infections, and STDs (all covered later in this section) are the recurring healthcare-associated infections (HAIs) that have been the focus of attention by government and private agencies for years.</p>
+
+  <div class="card">
+    <h4>Healthcare-Associated Infections (HAIs)</h4>
+    <p>Formerly called nosocomial infections, HAIs receive attention from media and oversight organizations like the Joint Commission and the Centers for Medicare and Medicaid Services (CMS). In general, HAIs are preventable, and providers are being increasingly held accountable for the incredible expense of managing infections that patients might never have acquired if they had not passed through the healthcare system.</p>
+  </div>
+
+  <div class="alert warning">
+    <strong>A Leading Cause of Preventable Deaths</strong>
+    Despite numerous initiatives designed to educate healthcare workers about infection control and prevention, HAIs continue to occur in all areas of the country and are among the leading causes of preventable deaths.
+  </div>
+
+  <h3>Four Focus Areas</h3>
+  <p>Attention has been focused on several specific categories of HAI:</p>
+  <table>
+    <tr><th>Abbreviation</th><th>Full Name</th></tr>
+    <tr><td>CLABSI</td><td>Central line-associated blood stream infections</td></tr>
+    <tr><td>CAUTI</td><td>Catheter-associated urinary tract infections</td></tr>
+    <tr><td>SSI</td><td>Surgical site infections</td></tr>
+    <tr><td>VAP</td><td>Ventilator-associated pneumonia</td></tr>
+  </table>
+  <p>HAI issues require &mdash; and will continue to demand &mdash; the cooperative efforts of various healthcare team members to identify risks, assess impact, develop strategies, and implement work practice controls to protect the patients who enter the healthcare system.</p>
+
+  <h3>Microbes Linked to HAIs &amp; Antibiotic Resistance</h3>
+  <div class="card">
+    <h4>The CDC's List of HAI-Linked Pathogens</h4>
+    <p>The CDC has compiled a list of pathogenic bacteria and viruses most frequently linked to or responsible for most HAIs. Recall from Chapter 21&rsquo;s opening discussion the &ldquo;alphabet soup&rdquo; of resistant organisms most often implicated in SSI/HAI root-cause analyses &mdash; carbapenem-resistant <em>Enterobacteriaceae</em> (CRE), methicillin-resistant <em>Staphylococcus aureus</em> (MRSA), vancomycin-resistant <em>Enterococcus</em> (VRE), and <em>Clostridioides difficile</em> (C. diff). These organisms remain central to the recurring HAI problem described here.</p>
+  </div>
+
+  <div class="card">
+    <h4>How Antibiotic Resistance Develops</h4>
+    <p>Antibiotics are the most commonly prescribed medication, and in half of cases they are prescribed inappropriately &mdash; the wrong type, the wrong dose, or unnecessary for the infection encountered. Animals raised for food are given low doses of antibiotics to enhance growth and development, which leads to antibiotic resistance in bacterial species, including <em>Salmonella</em> and <em>Campylobacter</em>. Transmission of antibiotic-resistant pathogens between individuals broadens their spread among members of a population.</p>
+  </div>
+
+  <div class="alert clinical">
+    <strong>Connecting Back to Antibiotic Stewardship</strong>
+    Recall the &ldquo;Behavioral Factors: Healthcare Worker Practices&rdquo; discussion from Chapter 21, which named &ldquo;carefully evaluated administration of antibiotic therapy&rdquo; as one of four key healthcare-worker behaviors. This tab provides the deeper context for <em>why</em> that practice matters &mdash; every unnecessary or imprecise antibiotic prescription (in humans <em>or</em> in food animals) contributes to the broader, society-wide problem of antibiotic resistance.
+  </div>
+</div>
+
+
+<div id="recurringother" class="tab-content">
+  <h2>Recurring Diseases: GI Viruses, Food-Borne Infections &amp; HIV/AIDS</h2>
+  <p class="section-intro">In addition to HAIs, several other categories of disease recur with regularity due to food sources, person-to-person transmission, and ongoing global health challenges. Although less directly tied to the operating room than HAIs, surgical technologists should understand these recurring diseases as part of the broader picture of infection control.</p>
+
+  <h3>Gastrointestinal Viruses</h3>
+  <div class="card">
+    <h4>Norovirus &amp; Rotavirus</h4>
+    <p>Norovirus and rotavirus are two of the more pathogenic members of the <em>Caliciviridae</em> family of enteropathogenic viruses that cause GI infections from food sources, contaminated surfaces, or person-to-person contact. Food-borne infection sources include restaurants, banquet facilities, private homes, healthcare facilities, schools and daycare centers, and others.</p>
+    <div class="stat-row">
+      <div class="stat-card"><div class="num">18</div><div class="lbl">viral particles needed to cause infection</div></div>
+      <div class="stat-card"><div class="num">2 weeks</div><div class="lbl">virus remains in feces after symptoms abate</div></div>
+      <div class="stat-card"><div class="num">Billions</div><div class="lbl">of viral particles shed during that period</div></div>
+    </div>
+    <p>These viruses are extremely contagious &mdash; transmission and inoculation of only 18 viral particles is enough to cause disease in another individual.</p>
+  </div>
+
+  <h3>Food-Borne Infections</h3>
+  <div class="card">
+    <h4>Common Causative Organisms</h4>
+    <p>Food-borne infections often recur in multiple regions of the country and world from a variety of food sources, most commonly <em>Escherichia coli</em>, <em>Salmonella</em>, <em>Listeria</em>, <em>Cyclospora</em>, and <em>Vibrio</em>. A variety of processed, packaged, and frozen foods are listed by the CDC as potential sources of food-borne infection.</p>
+  </div>
+
+  <div class="alert clinical">
+    <strong>Connecting Back to Behavioral Factors</strong>
+    Recall the &ldquo;Behavioral Factors: Food Safety &amp; Household&rdquo; discussion from Chapter 21 &mdash; undercooking, unpasteurized dairy, inadequate refrigeration, unwashed produce, and unwashed hands during food preparation were all named as everyday behaviors that contribute to food-borne illness. The organisms named here (<em>E. coli</em>, <em>Salmonella</em>, <em>Listeria</em>, <em>Cyclospora</em>, <em>Vibrio</em>) are the specific pathogens those behavioral factors allow to spread.
+  </div>
+
+  <h3>HIV/AIDS</h3>
+  <div class="card">
+    <h4>A Continuing Global Health Issue</h4>
+    <p>Human immunodeficiency virus (HIV) and the disease it causes, acquired immunodeficiency syndrome (AIDS), continue to be a serious global health issue and a recurring disease. Unlike some viruses, HIV does not remain viable outside the body for very long. It is only transmitted through intimate contact &mdash; not by casual contact, shaking hands, closed-lip kissing, or through tears, sweat, or saliva. It is not transmissible by mosquitoes, ticks, water, or air, and cannot be contracted by sitting on a toilet seat previously used by someone with HIV.</p>
+  </div>
+
+  <div class="alert warning">
+    <strong>Sharps Safety in the OR</strong>
+    Transmission of HIV through needle-stick injuries in healthcare settings is rare (about 1%), but extreme care should be taken when handling sharp objects in surgical procedures &mdash; hypodermic needles, scalpels, sharp-pronged retractors, K-wires or Steinman pins, bladed trocars, or any other sharp-tipped instruments &mdash; to prevent the risk of direct blood-to-blood transfer. This connects directly to the &ldquo;presume every patient is potentially infectious&rdquo; framing from the start of this chapter: sharps safety protocols apply to every patient, every procedure, every time.
+  </div>
+</div>
+
+
+<div id="reappearing" class="tab-content">
+  <h2>Reappearing Diseases: Preventable Childhood Diseases &amp; Vaccine-Preventable Illness</h2>
+  <p class="section-intro">Diseases previously considered under control or eradicated have begun to reappear in the United States. This final category of disease is closely tied to the herd immunity and vaccine misinformation discussions from Chapter 21, but focuses specifically on what has happened as a result &mdash; the actual return of preventable childhood diseases.</p>
+
+  <div class="card">
+    <h4>Preventable Childhood Diseases</h4>
+    <p>The reappearance of preventable diseases such as measles and whooping cough has gained media attention and sparked vigorous debate about the rights and responsibilities of parents, citizens, and the medical community. In response to the controversies caused by anti-vaccination groups and the spread of misinformation, the CDC stepped up its public information campaigns.</p>
+  </div>
+
+  <div class="card">
+    <h4>Pertussis (Whooping Cough)</h4>
+    <p>Pertussis is caused by <em>Bordetella pertussis</em> bacteria and causes serious inflammation of the respiratory tract in children, with infants typically being the most seriously affected. With vaccines available and recommended for children beginning at the age of 2 months, these infections should not be occurring with any degree of frequency &mdash; yet they continue to recur in communities with vaccination gaps.</p>
+  </div>
+
+  <h3>Vaccine Schedules &amp; Vaccine-Preventable Diseases</h3>
+  <div class="card">
+    <h4>The Childhood Immunization Schedule</h4>
+    <p>The textbook illustrates this section with the CDC&rsquo;s recommended immunization schedule for children from birth to six years old (Figure 22-9), alongside a reference chart of vaccine-preventable diseases and the vaccines that prevent them. The existence of a detailed, age-by-age recommended schedule underscores a key point: most of the diseases discussed in this tab are <em>not</em> diseases for which no protection exists &mdash; they are diseases for which protection exists, is recommended on a defined timeline, and yet is sometimes not followed.</p>
+  </div>
+
+  <div class="alert warning">
+    <strong>The Common Thread: Erosion of Trust</strong>
+    Recall from this chapter&rsquo;s overview tab that reappearing diseases are linked to &ldquo;widespread misinformation campaigns that erode critical trust in the public health institutions responsible for providing guidance and valid scientific resources.&rdquo; Pertussis and measles are not new pathogens, nor are they pathogens for which science lacks an answer &mdash; they are examples of what happens at the population level when individual vaccination decisions, taken together, fall below the herd immunity threshold (recall: approximately 95% for measles, from Chapter 21).
+  </div>
+
+  <div class="alert clinical">
+    <strong>The Surgical Technologist's Role</strong>
+    While surgical technologists do not typically administer vaccines, understanding the reappearance of vaccine-preventable disease matters for two reasons: (1) it affects the likelihood that a given patient may present with one of these conditions, requiring appropriate precautions; and (2) as healthcare professionals, surgical technologists are part of the broader public health ecosystem &mdash; their own vaccination status, and their ability to accurately discuss these topics with patients, families, and their own communities, contributes to the herd immunity that protects vulnerable populations.
+  </div>
+</div>
+
+
+<div id="terms" class="tab-content">
+  <h2>Key Terms</h2>
+  <p class="section-intro">Click any card to reveal its definition. Use the filter to focus on a specific category of terms.</p>
+  <div class="flash-controls">
+    <label for="cat-filter">Filter by category: </label>
+    <select id="cat-filter" onchange="filterCards()">
+      <option value="all">All Terms (38)</option>
+      <option value="Emerging Viral Diseases">Emerging Viral Diseases</option><option value="Microbes in the Media">Microbes in the Media</option><option value="Reappearing Diseases">Reappearing Diseases</option><option value="Recurring Diseases">Recurring Diseases</option>
+    </select>
+  </div>
+  <div class="flash-grid" id="flash-grid">
+  <div class='flashcard' data-cat=\"Microbes in the Media\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Hemorrhagic Fever</div><div class='def'>A group of illnesses caused by several distinct virus families (e.g., filoviruses, arenaviruses, flaviviruses, bunyaviruses) that produce fever along with bleeding/clotting disorders.</div></div>
+  <div class='flashcard' data-cat=\"Microbes in the Media\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Pandemic</div><div class='def'>An epidemic of infectious disease that has spread across a large region, such as multiple continents or worldwide, affecting a substantial number of people.</div></div>
+  <div class='flashcard' data-cat=\"Microbes in the Media\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Endemic</div><div class='def'>Describes a disease that is regularly found among particular people or in a certain area, maintaining a steady, baseline level of presence.</div></div>
+  <div class='flashcard' data-cat=\"Microbes in the Media\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Zoonotic</div><div class='def'>Describes a disease that can be transmitted from animals to humans (e.g., Ebola from fruit bats, Zika from monkeys).</div></div>
+  <div class='flashcard' data-cat=\"Microbes in the Media\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Antibiotic-Resistant Strain</div><div class='def'>A mutated strain of bacteria that has developed the ability to survive exposure to antibiotics that would normally kill it.</div></div>
+  <div class='flashcard' data-cat=\"Emerging Viral Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Filovirus</div><div class='def'>A family (Filoviridae) of RNA viruses characterized by long filamentous shapes that emerge from a central body; includes Ebola and Marburg viruses.</div></div>
+  <div class='flashcard' data-cat=\"Emerging Viral Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Virions</div><div class='def'>Complete, infectious viral particles released from a host cell after viral replication, capable of infecting new cells.</div></div>
+  <div class='flashcard' data-cat=\"Emerging Viral Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Replication</div><div class='def'>The process by which a virus uses a host cell's machinery to produce copies of itself, often destroying the host cell in the process.</div></div>
+  <div class='flashcard' data-cat=\"Emerging Viral Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Mutate</div><div class='def'>To undergo a change in genetic material; viruses mutate readily, allowing them to adapt to new hosts, environments, and immune responses.</div></div>
+  <div class='flashcard' data-cat=\"Emerging Viral Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Viremia</div><div class='def'>The presence of virus particles in the bloodstream; in dengue fever, viremia in humans persists for 2 to 12 days.</div></div>
+  <div class='flashcard' data-cat=\"Emerging Viral Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Arthralgia</div><div class='def'>Joint pain, a common symptom of dengue fever ("break-bone fever") and other viral hemorrhagic illnesses.</div></div>
+  <div class='flashcard' data-cat=\"Emerging Viral Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Myalgia</div><div class='def'>Muscle pain or aching, a common early symptom of dengue fever, Lassa fever, and hantavirus infections.</div></div>
+  <div class='flashcard' data-cat=\"Emerging Viral Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Leukopenia</div><div class='def'>An abnormally low white blood cell count, a laboratory finding commonly seen in dengue fever.</div></div>
+  <div class='flashcard' data-cat=\"Emerging Viral Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Thrombocytopenia</div><div class='def'>An abnormally low platelet count, a laboratory finding commonly seen in dengue fever that contributes to bleeding risk.</div></div>
+  <div class='flashcard' data-cat=\"Emerging Viral Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Serotype</div><div class='def'>A distinct variation within a species of virus or bacteria, distinguished by the antigens on its surface; dengue has four serotypes, and infection with one does not protect against the others.</div></div>
+  <div class='flashcard' data-cat=\"Emerging Viral Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Flaccid Myelitis</div><div class='def'>A respiratory illness in children causing sudden onset of weakness in one or more arms or legs, possibly linked to enterovirus EV-D68 infection.</div></div>
+  <div class='flashcard' data-cat=\"Emerging Viral Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Pharyngitis</div><div class='def'>Inflammation of the pharynx (throat), a respiratory symptom seen in Lassa fever and many other viral infections.</div></div>
+  <div class='flashcard' data-cat=\"Emerging Viral Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Encephalitis</div><div class='def'>Inflammation of the brain, a serious neurologic complication seen in Lassa fever and other viral hemorrhagic illnesses.</div></div>
+  <div class='flashcard' data-cat=\"Emerging Viral Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Meningitis</div><div class='def'>Inflammation of the membranes (meninges) surrounding the brain and spinal cord, a serious neurologic complication of Lassa fever.</div></div>
+  <div class='flashcard' data-cat=\"Emerging Viral Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Reservoir (Natural Reservoir)</div><div class='def'>A host species in which a pathogen lives and reproduces, often without causing illness, that serves as a long-term source of infection for other species (e.g., fruit bats for Ebola and Marburg, deer mice for Hantavirus).</div></div>
+  <div class='flashcard' data-cat=\"Emerging Viral Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Intractable</div><div class='def'>Difficult or impossible to manage or control; used to describe the systemic shock that results from intravascular volume depletion in Ebola hemorrhagic fever.</div></div>
+  <div class='flashcard' data-cat=\"Recurring Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Healthcare-Associated Infection (HAI)</div><div class='def'>An infection a patient acquires while receiving treatment for another condition in a healthcare setting; formerly called a nosocomial infection.</div></div>
+  <div class='flashcard' data-cat=\"Recurring Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Nosocomial Infection</div><div class='def'>The older term for a healthcare-associated infection (HAI) &mdash; an infection originating in a hospital or healthcare facility.</div></div>
+  <div class='flashcard' data-cat=\"Recurring Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>CLABSI</div><div class='def'>Central line-associated blood stream infection &mdash; one of the four major HAI categories tracked by oversight agencies.</div></div>
+  <div class='flashcard' data-cat=\"Recurring Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>CAUTI</div><div class='def'>Catheter-associated urinary tract infection &mdash; one of the four major HAI categories tracked by oversight agencies.</div></div>
+  <div class='flashcard' data-cat=\"Recurring Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>SSI</div><div class='def'>Surgical site infection &mdash; an HAI occurring at or near a surgical incision, of direct relevance to surgical technologists.</div></div>
+  <div class='flashcard' data-cat=\"Recurring Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>VAP</div><div class='def'>Ventilator-associated pneumonia &mdash; an HAI occurring in patients receiving mechanical ventilation.</div></div>
+  <div class='flashcard' data-cat=\"Recurring Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Antibiotic Resistance</div><div class='def'>The ability of microorganisms to survive exposure to antibiotics that would normally be effective, often resulting from overuse or inappropriate prescribing in humans and food animals.</div></div>
+  <div class='flashcard' data-cat=\"Recurring Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Caliciviridae</div><div class='def'>A family of enteropathogenic (GI-disease-causing) viruses that includes norovirus and rotavirus.</div></div>
+  <div class='flashcard' data-cat=\"Recurring Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Enteropathogenic</div><div class='def'>Describes a microbe that causes disease in the intestinal (enteric) tract.</div></div>
+  <div class='flashcard' data-cat=\"Recurring Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>HIV</div><div class='def'>Human immunodeficiency virus &mdash; the virus that attacks the immune system and, if untreated, can progress to AIDS.</div></div>
+  <div class='flashcard' data-cat=\"Recurring Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>AIDS</div><div class='def'>Acquired immunodeficiency syndrome &mdash; the disease caused by advanced, untreated HIV infection, characterized by severe immune system damage.</div></div>
+  <div class='flashcard' data-cat=\"Recurring Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Sharps</div><div class='def'>Medical instruments capable of causing punctures or cuts &mdash; including hypodermic needles, scalpels, sharp-pronged retractors, K-wires, Steinman pins, and bladed trocars &mdash; that pose a risk of blood-to-blood transmission of bloodborne pathogens.</div></div>
+  <div class='flashcard' data-cat=\"Reappearing Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Pertussis</div><div class='def'>Whooping cough &mdash; a disease caused by Bordetella pertussis that causes serious respiratory tract inflammation, most seriously affecting infants.</div></div>
+  <div class='flashcard' data-cat=\"Reappearing Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Bordetella pertussis</div><div class='def'>The bacterium that causes pertussis (whooping cough); a vaccine-preventable disease that has reappeared in communities with vaccination gaps.</div></div>
+  <div class='flashcard' data-cat=\"Reappearing Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Herd Immunity (Review)</div><div class='def'>Protection of a population from a disease that occurs when a sufficiently high percentage of individuals are immune, making transmission unlikely even to unvaccinated individuals; approximately 95% for measles.</div></div>
+  <div class='flashcard' data-cat=\"Reappearing Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Vaccination Schedule</div><div class='def'>A recommended, age-based timeline (e.g., the CDC's birth-to-six-years schedule) for administering vaccines to provide protection against specific diseases at the appropriate stage of development.</div></div>
+  <div class='flashcard' data-cat=\"Reappearing Diseases\" onclick=\"this.classList.toggle('flipped')\"><div class='term'>Misinformation Campaign</div><div class='def'>The deliberate or unintentional spread of false or misleading information about vaccines or public health measures, which can erode public trust and contribute to the reappearance of previously controlled diseases.</div></div>
+  </div>
+</div>
+
+
+<div id="quiz" class="tab-content">
+  <h2>Chapter 22 Quiz</h2>
+  <p class="section-intro">Answer all 10 questions, then click <strong>Check Answers</strong> to see your score and review feedback for each item.</p>
+  <div class="quiz-q" data-qid="q1">
+  <p class="question">1. A disease that has previously been seen primarily in foreign countries but, with expanded travel and trade, has gained entry to the United States is best classified as a(n):</p>
+  <label><input type="radio" name="q1" value="0" data-correct="true"> Emerging disease</label>
+      <label><input type="radio" name="q1" value="1" data-correct="false"> Recurring disease</label>
+      <label><input type="radio" name="q1" value="2" data-correct="false"> Reappearing disease</label>
+      <label><input type="radio" name="q1" value="3" data-correct="false"> Endemic disease</label>
+  <div class="quiz-feedback" id="fb-q1"></div>
+</div>
+<div class="quiz-q" data-qid="q2">
+  <p class="question">2. Measles reappearing in communities due to parents not following recommended vaccine schedules is an example of a(n):</p>
+  <label><input type="radio" name="q2" value="0" data-correct="false"> Emerging disease</label>
+      <label><input type="radio" name="q2" value="1" data-correct="false"> Recurring disease</label>
+      <label><input type="radio" name="q2" value="2" data-correct="true"> Reappearing disease</label>
+      <label><input type="radio" name="q2" value="3" data-correct="false"> Zoonotic disease</label>
+  <div class="quiz-feedback" id="fb-q2"></div>
+</div>
+<div class="quiz-q" data-qid="q3">
+  <p class="question">3. Ebola hemorrhagic fever is caused by a member of which virus family, characterized by long filaments emerging from a central body?</p>
+  <label><input type="radio" name="q3" value="0" data-correct="false"> Flaviviridae</label>
+      <label><input type="radio" name="q3" value="1" data-correct="false"> Arenaviridae</label>
+      <label><input type="radio" name="q3" value="2" data-correct="false"> Bunyaviridae</label>
+      <label><input type="radio" name="q3" value="3" data-correct="true"> Filoviridae</label>
+  <div class="quiz-feedback" id="fb-q3"></div>
+</div>
+<div class="quiz-q" data-qid="q4">
+  <p class="question">4. Which animal has been identified as the natural reservoir for the Marburg virus?</p>
+  <label><input type="radio" name="q4" value="0" data-correct="false"> Deer mice</label>
+      <label><input type="radio" name="q4" value="1" data-correct="true"> African fruit bats (Rousettus aegyptiacus)</label>
+      <label><input type="radio" name="q4" value="2" data-correct="false"> Aedes mosquitoes</label>
+      <label><input type="radio" name="q4" value="3" data-correct="false"> Mastomys natalensis rodents</label>
+  <div class="quiz-feedback" id="fb-q4"></div>
+</div>
+<div class="quiz-q" data-qid="q5">
+  <p class="question">5. "Break-bone fever," characterized by severe myalgia, arthralgia, high fever, headache, and rash, describes which disease?</p>
+  <label><input type="radio" name="q5" value="0" data-correct="false"> Lassa fever</label>
+      <label><input type="radio" name="q5" value="1" data-correct="false"> Marburg hemorrhagic fever</label>
+      <label><input type="radio" name="q5" value="2" data-correct="true"> Dengue fever</label>
+      <label><input type="radio" name="q5" value="3" data-correct="false"> Hantavirus pulmonary syndrome</label>
+  <div class="quiz-feedback" id="fb-q5"></div>
+</div>
+<div class="quiz-q" data-qid="q6">
+  <p class="question">6. The 1993 Four Corners outbreak among the Navajo Nation was later identified as a new strain of which virus, carried by deer mice?</p>
+  <label><input type="radio" name="q6" value="0" data-correct="false"> Ebola virus</label>
+      <label><input type="radio" name="q6" value="1" data-correct="true"> Hantavirus</label>
+      <label><input type="radio" name="q6" value="2" data-correct="false"> Zika virus</label>
+      <label><input type="radio" name="q6" value="3" data-correct="false"> Chikungunya virus</label>
+  <div class="quiz-feedback" id="fb-q6"></div>
+</div>
+<div class="quiz-q" data-qid="q7">
+  <p class="question">7. Zika virus infection during pregnancy is most strongly associated with which condition in newborns?</p>
+  <label><input type="radio" name="q7" value="0" data-correct="true"> Microcephaly</label>
+      <label><input type="radio" name="q7" value="1" data-correct="false"> Thrombocytopenia</label>
+      <label><input type="radio" name="q7" value="2" data-correct="false"> Pertussis</label>
+      <label><input type="radio" name="q7" value="3" data-correct="false"> Acute flaccid myelitis</label>
+  <div class="quiz-feedback" id="fb-q7"></div>
+</div>
+<div class="quiz-q" data-qid="q8">
+  <p class="question">8. Which of the following is one of the four HAI categories most heavily tracked by oversight agencies, alongside CLABSI, CAUTI, and SSI?</p>
+  <label><input type="radio" name="q8" value="0" data-correct="true"> VAP (ventilator-associated pneumonia)</label>
+      <label><input type="radio" name="q8" value="1" data-correct="false"> EHF (Ebola hemorrhagic fever)</label>
+      <label><input type="radio" name="q8" value="2" data-correct="false"> DHF (dengue hemorrhagic fever)</label>
+      <label><input type="radio" name="q8" value="3" data-correct="false"> HFRS (hemorrhagic fever with renal syndrome)</label>
+  <div class="quiz-feedback" id="fb-q8"></div>
+</div>
+<div class="quiz-q" data-qid="q9">
+  <p class="question">9. Norovirus and rotavirus belong to which viral family of enteropathogenic viruses?</p>
+  <label><input type="radio" name="q9" value="0" data-correct="false"> Filoviridae</label>
+      <label><input type="radio" name="q9" value="1" data-correct="true"> Caliciviridae</label>
+      <label><input type="radio" name="q9" value="2" data-correct="false"> Flaviviridae</label>
+      <label><input type="radio" name="q9" value="3" data-correct="false"> Arenaviridae</label>
+  <div class="quiz-feedback" id="fb-q9"></div>
+</div>
+<div class="quiz-q" data-qid="q10">
+  <p class="question">10. Which bacterium causes pertussis (whooping cough), a reappearing childhood disease most seriously affecting infants?</p>
+  <label><input type="radio" name="q10" value="0" data-correct="true"> Bordetella pertussis</label>
+      <label><input type="radio" name="q10" value="1" data-correct="false"> Clostridioides difficile</label>
+      <label><input type="radio" name="q10" value="2" data-correct="false"> Mastomys natalensis</label>
+      <label><input type="radio" name="q10" value="3" data-correct="false"> Vibrio cholerae</label>
+  <div class="quiz-feedback" id="fb-q10"></div>
+</div>
+  <button id="submit-quiz" onclick="checkQuiz()">Check Answers</button>
+  <div id="quiz-score"></div>
+</div>
+
+
+<footer>
+  Microbiology for Surgical Technologists, 3rd Ed. (Rodriguez) &middot; Chapter 22 Study Guide &middot; ATA College Surgical Technology Program &middot; Pablo Pereira, CST Instructor
+</footer>
+
+<script>
+function showTab(id, btn) {
+  var contents = document.getElementsByClassName('tab-content');
+  for (var i = 0; i < contents.length; i++) {
+    contents[i].classList.remove('active');
+  }
+  var buttons = document.querySelectorAll('.tab-bar button');
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove('active');
+  }
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function filterCards() {
+  var val = document.getElementById('cat-filter').value;
+  var cards = document.getElementsByClassName('flashcard');
+  for (var i = 0; i < cards.length; i++) {
+    if (val === 'all' || cards[i].getAttribute('data-cat') === val) {
+      cards[i].style.display = 'flex';
+    } else {
+      cards[i].style.display = 'none';
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  var headers = document.getElementsByClassName('accordion-header');
+  for (var i = 0; i < headers.length; i++) {
+    headers[i].addEventListener('click', function () {
+      this.classList.toggle('open');
+      var body = this.nextElementSibling;
+      body.classList.toggle('open');
+    });
+  }
+});
+
+function checkQuiz() {
+  var questions = document.querySelectorAll('.quiz-q');
+  var score = 0;
+  for (var i = 0; i < questions.length; i++) {
+    var qid = questions[i].getAttribute('data-qid');
+    var radios = document.getElementsByName(qid);
+    var fb = document.getElementById('fb-' + qid);
+    var selected = null;
+    var correctValue = null;
+    for (var j = 0; j < radios.length; j++) {
+      if (radios[j].getAttribute('data-correct') === 'true') {
+        correctValue = radios[j].value;
+      }
+      if (radios[j].checked) {
+        selected = radios[j];
+      }
+    }
+    fb.className = 'quiz-feedback show';
+    if (selected === null) {
+      fb.classList.add('no');
+      fb.innerHTML = 'No answer selected. The correct answer is option ' + (parseInt(correctValue) + 1) + '.';
+    } else if (selected.getAttribute('data-correct') === 'true') {
+      score++;
+      fb.classList.add('ok');
+      fb.innerHTML = 'Correct!';
+    } else {
+      fb.classList.add('no');
+      fb.innerHTML = 'Incorrect. The correct answer is option ' + (parseInt(correctValue) + 1) + '.';
+    }
+  }
+  var scoreDiv = document.getElementById('quiz-score');
+  scoreDiv.style.display = 'block';
+  scoreDiv.innerHTML = 'Score: ' + score + ' / ' + questions.length;
+}
+</script>
+</body>
+</html>
